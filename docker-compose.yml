@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     gateway:
-        build: ./ApiGatewayMicroservice
+        image: stefantraistaru/cc-project-warmup:api-gateway
         environment:
             BOOKS_SERVICE_API_ROUTE: books-service/api
             NODE_ENV: development
@@ -12,7 +12,7 @@ services:
             - gateway-books
 
     books-service:
-        build: ./BooksMicroservice
+        image: stefantraistaru/cc-project-warmup:books-service
         environment:
             IO_SERVICE_API_ROUTE: io-service/api
             NODE_ENV: development
@@ -21,7 +21,7 @@ services:
             - books-io
 
     io-service:
-        build: ./IOMicroservice
+        image: stefantraistaru/cc-project-warmup:io-service
         environment:
             PGUSER_FILE: user-secret
             PGPASSWORD_FILE: password-secret
