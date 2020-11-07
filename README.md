@@ -1,1 +1,3 @@
-# cc-project-warmup
+# laborator-4
+
+Warmup pentru proiect
